@@ -5,13 +5,14 @@ import { AboutAsyncPage } from "./pages/AboutPage/AboutAsyncPage"
 import { MainAsyncPage } from "./pages/MainPage/MainAsyncPage"
 import { Suspense } from "react"
 import { useTheme } from "./theme/useTheme"
+import { classNames } from './helpers/classNames/classNames'
 
 
 export const App = () => {
     const {theme, toogleTheme} = useTheme()
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames("app", {}, [theme])}>
             <button onClick={toogleTheme} >TOOGLE THEME</button>
             <Link to ={''}>Main Page</Link>
             <Link to ={'/about'}>About</Link>
