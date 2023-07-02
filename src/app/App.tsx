@@ -1,11 +1,10 @@
 import { Link, Route, Routes } from "react-router-dom"
-import { Counter } from "./components/Counter"
 import './styles/index.scss'
-import { AboutAsyncPage } from "./pages/AboutPage/AboutAsyncPage"
-import { MainAsyncPage } from "./pages/MainPage/MainAsyncPage"
 import { Suspense } from "react"
-import { useTheme } from "./theme/useTheme"
-import { classNames } from './helpers/classNames/classNames'
+import { useTheme } from "./providers/ThemeProvider"
+import { AboutAsyncPage } from "pages/AboutPage"
+import { MainAsyncPage } from "pages/MainPage"
+import { classNames } from "shared/lib/classNames/classNames"
 
 
 export const App = () => {
@@ -23,7 +22,6 @@ export const App = () => {
                 </Routes>
             </Suspense>
             Simple TEXT
-            <Counter />
         </div>
     )
 }
